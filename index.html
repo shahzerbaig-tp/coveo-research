@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <script
+    type="module"
+    src="https://static.cloud.coveo.com/atomic/v2/atomic.esm.js"
+  ></script>
+  <link
+  rel="stylesheet"
+  href="https://static.cloud.coveo.com/atomic/v2/themes/coveo.css"
+/> 
+<link
+  rel="stylesheet"
+  href="style.css"
+/> 
+<script>
+  (async () => {
+    await customElements.whenDefined("atomic-search-interface"); 
+    const searchInterface = document.querySelector("#search");
+
+    await searchInterface.initialize({ 
+      accessToken: "xx29e62e9b-f739-4886-b433-c9326cc1b492",
+      organizationId: "docsdemoslhkhaxyy",
+      organizationEndpoints: await searchInterface.getOrganizationEndpoints('docsdemoslhkhaxyy'),
+    });
+    searchInterface.executeFirstSearch(); 
+  })();
+</script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <atomic-search-interface id="search">
+        <atomic-search-layout> 
+        <!-- all Atomic components will go in here -->
+        </atomic-search-layout>
+      </atomic-search-interface>
+    </body>
+</body>
+</html>
